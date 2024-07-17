@@ -1,0 +1,55 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>Sergio Flores</Authors>
+    <Company>Lunar Labs</Company>
+    <Product>NeoLux</Product>
+    <Description>NEO lightwallet / blockchain API for C#. Allows you to interact with smart contracts in the NEO blockchain.</Description>
+    <PackageProjectUrl>https://github.com/CityOfZion/neo-lux</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/CityOfZion/neo-lux</RepositoryUrl>
+    <Version>0.8.2</Version>
+    <AssemblyVersion>0.8.2.0</AssemblyVersion>
+    <PackageReleaseNotes></PackageReleaseNotes>
+    <FileVersion>0.8.2.0</FileVersion>
+    <PackageTags>NEO Emulator dApp Wallet Blockchain Smart Contract</PackageTags>
+    <PackageId>NeoLux</PackageId>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net461|AnyCPU'">
+    <AllowUnsafeBlocks>false</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|net35|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|net461|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+ 
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Release|netstandard2.0|AnyCPU'">
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+ 
+  <ItemGroup>
+    <Compile Remove="Cryptography\MerkleTree.cs" />
+    <Compile Remove="Cryptography\MerkleTreeNode.cs" />
+    <Compile Remove="Cryptography\Murmur3.cs" />
+  </ItemGroup>
+  
+  <ItemGroup>
+    <PackageReference Include="BouncyCastle.NetCore" Version="1.8.3" />
+    <PackageReference Include="LunarParser" Version="1.1.2" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Properties\" />
+  </ItemGroup>
+  
+</Project>
